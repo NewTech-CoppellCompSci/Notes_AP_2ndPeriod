@@ -33,6 +33,9 @@ public class notes00a_ObjectsReview {
 	public double getVolume() {
 		return this.volume;  
 	}
+	public String getColor() {
+		return color;
+	}
 	
 	
 	
