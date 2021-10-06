@@ -64,7 +64,7 @@ public class Notes02_ArrayLists {
 		/*
 		 * How Many are in the List?
 		 * 
-		 * .size() = is the number of elemnts in the list
+		 * .size() = is the number of elements in the list
 		 */
 		System.out.println("There ar " + animals.size() + " animals on the list");
 		
@@ -72,7 +72,7 @@ public class Notes02_ArrayLists {
 		/*
 		 * Accessing Elements (and their methods)
 		 * 
-		 * 
+		 * .get(index) = access the element at that index
 		 */
 		//get the panda's birthday method
 		animals.get(0).hasBirthday();
@@ -82,8 +82,8 @@ public class Notes02_ArrayLists {
 		/*
 		 * Removing Elements
 		 * 
-		 * .remove(<index>) = removes the element at that index and moves the list up
-		 * .remove(<object>) = removes the FIRST instance of this object and moves the list up
+		 * .remove(<index>) = removes element at that index and shifts everything below it up
+		 * .remove(<object>) = removes the FIRST instance of this object and shifts everything below it up
 		 */
 		//removes index 1
 		animals.remove(1);
@@ -97,6 +97,8 @@ public class Notes02_ArrayLists {
 		 * 
 		 * Objects that don't have a variable reference.
 		 * They are solely on a list.
+		 * 
+		 * Create the object directly into a list
 		 * 
 		 */
 		//add a buffalo to the end of the list
@@ -131,7 +133,6 @@ public class Notes02_ArrayLists {
 		 * Passed By Value vs Passed By Reference
 		 * 
 		 * 
-		 * 
 		 * Items Passed by Value: Primitive data types = int, double, boolean, Strings
 		 *    The actual VALUE is stored in the variable
 		 * 
@@ -140,23 +141,39 @@ public class Notes02_ArrayLists {
 		 *    
 		 *    
 		 */
+		System.out.println("\n\n\n\nPassed by Reference vs Passed by Value: \n");
 		
+		System.out.println("Passed by value Examples: ");
+		
+		int x = 5, y = 7;
+		x = y;  				//store y in x   
+		y = 9;					//changing y does not change x
+		System.out.println("x = " + x);
+		System.out.println("y = " + y);
+		
+		
+		
+		System.out.println("\nPassed by Reference Examples: ");
+		
+		//build the list
 		cars.add(car1);
 		cars.add(car1);
+		//print the list
+		System.out.println("\nWhat's currently on the list");
+		for (Car c : cars) {
+			System.out.println(c);
+		}
 		
+		car1.addMiles(5000);  //adds 5,000 miles to object, so it affects every place that reference is stored
+		System.out.println("\nEdit the car1 variable");
 		System.out.println();
 		for (Car c : cars) {
 			System.out.println(c);
 		}
 		
-		car1.addMiles(5000);
-		System.out.println();
-		for (Car c : cars) {
-			System.out.println(c);
-		}
 		
-		
-		cars.get(0).addMiles(7000000);
+		cars.get(0).addMiles(7000000);  //adds 7,000,000 miles to object, so it affects every place that reference is stored
+		System.out.println("\nEdit cars list at index 0");
 		System.out.println();
 		for (Car c : cars) {
 			System.out.println(c);
