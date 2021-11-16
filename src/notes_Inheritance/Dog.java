@@ -21,6 +21,9 @@ public class Dog extends Animal{
 		//type cast obj to a Dog
 		Dog other = (Dog) obj;
 		
+		
+		
+		
 		//compare whatever you want
 		if (super.getName().equals(other.getName())  &&
 			super.getAge() == other.getAge()) {
