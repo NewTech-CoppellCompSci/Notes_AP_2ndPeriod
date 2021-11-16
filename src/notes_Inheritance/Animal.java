@@ -7,9 +7,11 @@ package notes_Inheritance;
 public class Animal {
 	
 	private int age;
+	private String name;
 	
-	public Animal(int age) {
+	public Animal(int age, String name) {
 		this.age = age;
+		this.name = name;
 	}
 	
 	
@@ -20,7 +22,7 @@ public class Animal {
 	
 	
 	
-	
+	public String getName() { return this.name; }
 	public int getAge() {
 		return age;
 	}
