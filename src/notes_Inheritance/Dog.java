@@ -22,11 +22,9 @@ public class Dog extends Animal{
 		Dog other = (Dog) obj;
 		
 		
-		
-		
-		//compare whatever you want
-		if (super.getName().equals(other.getName())  &&
-			super.getAge() == other.getAge()) {
+		//compare whatever parameters you want
+		if (super.getName().equals(other.getName()) 
+			&& super.getAge() == other.getAge()) {
 			return true;
 		}
 		
