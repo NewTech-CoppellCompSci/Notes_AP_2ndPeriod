@@ -1,10 +1,13 @@
 package guis;
 
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class BasicGUI {
 
+	
+	
 	public static void main(String[] args) {
 		
 		buildGUI();
@@ -17,7 +20,7 @@ public class BasicGUI {
 		//create overall frame
 		JFrame frame = new JFrame("Basic GUI");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //delete frame when program ends
-		frame.setSize(600, 400);  //width and height
+		frame.setSize(1000, 1000);  //width and height
 		
 		
 		
@@ -55,6 +58,39 @@ public class BasicGUI {
 			
 		});
 		frame.add(button1);
+	
+		
+		//create images
+		ImageIcon dumbGuyPic = new ImageIcon("src/guis/DumbGuy.jpeg");
+		//scale if you want
+		ImageIcon scaledImage = new ImageIcon(dumbGuyPic.getImage().getScaledInstance(
+				500, 
+				500, 
+				java.awt.Image.SCALE_SMOOTH));
+		
+		//set up original
+		JLabel pictureLabel1 = new JLabel(scaledImage);
+		pictureLabel1.setBounds(500, 350, 
+				scaledImage.getIconWidth(),
+				scaledImage.getIconHeight());
+		
+		//set up scaled
+		JLabel pictureLabel2 = new JLabel(dumbGuyPic);
+		pictureLabel2.setBounds(20, 350, 
+				dumbGuyPic.getIconWidth(),
+				dumbGuyPic.getIconHeight());
+		
+		frame.add(pictureLabel1);
+		frame.add(pictureLabel2);
+		
+		
+		//place image on button
+		JButton dumbGuyButton = new JButton(dumbGuyPic);
+		dumbGuyButton.setBounds(600, 40, 
+				dumbGuyPic.getIconWidth(),
+				dumbGuyPic.getIconHeight());
+		frame.add(dumbGuyButton);
+		
 		
 		
 		frame.setLayout(null);  //don't use a default layout
